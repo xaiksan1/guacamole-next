@@ -1,0 +1,52 @@
+version: 0.1
+cli:
+  version: 1.17.2
+plugins:
+  sources:
+    - id: trunk
+      ref: v1.2.6
+      uri: https://github.com/trunk-io/plugins
+
+lint:
+  enabled:
+    - eslint@8.56.0
+    - prettier@3.1.1
+  ignore:
+    - linters: [ALL]
+      paths:
+        - node_modules/**
+        - .next/**
+        - out/**
+        - dist/**
+        - build/**
+        - public/static/**
+        - "**/__generated__/**"
+
+  linters:
+    - name: eslint
+      commands:
+        - run: npm exec eslint --
+      direct_configs:
+        - .eslintrc.json
+      files: ["src/**"]
+      success_codes: [0, 1]
+      environment:
+        - name: NODE_PATH
+          value: ${workspace}
+
+    - name: prettier
+      commands:
+        - run: npm exec prettier --
+      direct_configs:
+        - .prettierrc.json
+      files: ["src/**"]
+      success_codes: [0]
+      error_codes: [1]
+
+runtimes:
+  enabled:
+    - node@20.10.0
+
+actions:
+  enabled:
+    - trunk-announce

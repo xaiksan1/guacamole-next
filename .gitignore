@@ -1,118 +1,48 @@
-# Next.js specific files
+# NextJS and Node generated files
 .next/
-out/
-build/
-dist/
-.swc/
-.turbo/
-
-# Dependencies
 node_modules/
-/.pnp
-.pnp.js
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.yarn/cache
-.yarn/unplugged
-.yarn/build-state.yml
-.yarn/install-state.gz
+dist/
+build/
 
 # Environment files
 .env
-.env.*
-!.env.example
 .env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env.*.local
 
 # Debug logs
-logs
-*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
 
-# IDE specific files
-.idea/
-.vscode/*
-!.vscode/extensions.json
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-*.code-workspace
-*.sublime-*
-.DS_Store
-.history/
-.eslintcache
-.stylelintcache
-
-# OS specific files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-desktop.ini
-
-# Build outputs
-*.tsbuildinfo
-storybook-static
-next-env.d.ts
-.vercel
-.netlify
-
-# Temporary files
-*.swp
-*.swo
-*~
-*.bak
-*.tmp
-*.temp
-
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-/node_modules
-/.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
-
-# testing
-/coverage
-
-# next.js
-/.next/
-/out/
-
-# production
-/build
-
-# misc
+# System Files
 .DS_Store
 *.pem
 
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
+# Testing
+coverage/
 
-# env files (can opt-in for committing if needed)
-.env*
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
 
-# vercel
-.vercel
+# Storybook
+storybook-static/
+# Storybook
+storybook-static/
 
-# typescript
-*.tsbuildinfo
+# Trunk
+.trunk/logs/
+.trunk/notifications/
+.trunk/out/
+
+# TypeScript
 next-env.d.ts
+
+# Logs
+build-storybook.log
+
+# Config files that should be versioned
+!chromatic.config.json
+!.trunk/trunk.yaml

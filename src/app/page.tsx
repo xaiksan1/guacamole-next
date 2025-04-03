@@ -1,103 +1,218 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button/Button";
+import { Card } from "@/components/ui/card/Card";
+import { useTheme } from "@/components/ui/theme-toggle/ThemeProvider";
+import { motion } from "framer-motion";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const { theme, toggleTheme } = useTheme();
+  const [isVisible, setIsVisible] = useState(false);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+  // Animation variants
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { 
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const staggerChildren = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const featureItems = [
+    {
+      title: "Modern UI",
+      description: "Clean and intuitive interface with responsive design for all devices",
+      icon: "🎨"
+    },
+    {
+      title: "Dark Mode",
+      description: "Toggle between light and dark themes for comfortable viewing",
+      icon: "🌓"
+    },
+    {
+      title: "Component Library",
+      description: "Reusable components for consistent design across your application",
+      icon: "🧩"
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
+      {/* Hero Section */}
+      <motion.section 
+        className="relative pt-20 pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
+        initial="hidden"
+        animate={isVisible ? "visible" : "hidden"}
+        variants={staggerChildren}
+      >
+        <div className="flex flex-col lg:flex-row items-center gap-12">
+          <motion.div 
+            className="w-full lg:w-1/2 text-center lg:text-left"
+            variants={fadeIn}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+              Build Better Apps <span className="text-blue-600 dark:text-blue-400">Faster</span>
+            </h1>
+            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-lg mx-auto lg:mx-0">
+              A modern UI component library for Next.js applications with built-in theming, responsive design, and accessibility.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <Button 
+                variant="primary" 
+                size="lg"
+                leftIcon={
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                }
+              >
+                Get Started
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg"
+                onClick={toggleTheme}
+                leftIcon={theme === 'dark' ? '🌞' : '🌙'}
+              >
+                {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+              </Button>
+            </div>
+          </motion.div>
+          <motion.div 
+            className="w-full lg:w-1/2"
+            variants={fadeIn}
           >
-            Read our docs
-          </a>
+            <div className="relative h-[300px] sm:h-[400px] w-full">
+              <Image
+                src="/next.svg"
+                alt="Next.js Hero"
+                priority
+                fill
+                style={{ objectFit: 'contain' }}
+                className="dark:invert p-6"
+              />
+            </div>
+          </motion.div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      </motion.section>
+
+      {/* Features Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            Our Components
+          </h2>
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            Explore our library of reusable components designed for modern web applications
+          </p>
+        </motion.div>
+
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          variants={staggerChildren}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
         >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
-}
+          {featureItems.map((feature, index) => (
+            <motion.div key={index} variants={fadeIn}>
+              <Card 
+                variant="elevated" 
+                hoverEffect 
+                className="h-full"
+              >
+                <Card.Body>
+                  <div className="text-4xl mb-4">{feature.icon}</div>
+                  <Card.Title className="mb-2">{feature.title}</Card.Title>
+                  <Card.Description>{feature.description}</Card.Description>
+                </Card.Body>
+                <Card.Footer className="flex justify-end">
+                  <Button variant="secondary" size="sm">
+                    Learn more
+                  </Button>
+                </Card.Footer>
+              </Card>
+            </motion.div>
+          ))}
+        </motion.div>
+      </section>
+
+      {/* CTA Section */}
+      <motion.section 
+        className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+      >
+        <Card variant="flat" className="bg-blue-600 dark:bg-blue-800 text-white">
+          <Card.Body className="text-center py-12 px-4 sm:px-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to get started?</h2>
+            <p className="text-lg mb-8 max-w-2xl mx-auto text-blue-100">
+              Join thousands of developers building modern applications with our component library.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                variant="outline" 
+                size="lg"
+                className="border-white text-white hover:bg-white hover:text-blue-600"
+              >
+                Documentation
+              </Button>
+              <Button 
+                variant="primary" 
+                size="lg"
+                className="bg-white text-blue-600 hover:bg-blue-50"
+              >
+                Get Started
+              </Button>
+            </div>
+          </Card.Body>
+        </Card>
+      </motion.section>
+
+      {/* Footer */}
+      <footer className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-gray-200 dark:border-gray-700">
+        <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="mb-4 md:mb-0">
+            <Image
+              src="/next.svg"
+              alt="Logo"
+              width={100}
+              height={20}
+              className="dark:invert"
+            />
+          </div>
+          <div className="flex gap-6">
+            <a href="#" className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors">
+              Documentation
+            </a>
+            <a href="#" className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors">
+              GitHub
+            </a>
+            <a href="#" className="text-gray-600 hover:text-gray

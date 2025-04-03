@@ -1,3 +1,70 @@
+# Guacamole Next.js Project
+
+## Repository Status and Verification
+
+### Project Overview
+This repository contains a Next.js application with the following key features:
+- TypeScript support
+- TailwindCSS for styling
+- Storybook for component development
+- Chromatic for visual testing
+- Trunk for code quality
+
+### Configuration Status
+- Next.js + TypeScript configuration ✓
+- TailwindCSS + PostCSS setup ✓
+- Storybook initialization ✓
+- Chromatic integration ✓
+- Git version control ✓
+
+### Version Control
+The repository follows these practices:
+- Conventional commit messages (feat, fix, chore, docs)
+- Protected configuration files
+- Proper .gitignore patterns
+- Regular security checks
+
+### Verification Process
+We maintain repository health through regular verification:
+1. **Configuration Validation**
+   - Critical files tracking
+   - Dependencies verification
+   - Security scanning
+
+2. **Code Quality**
+   - ESLint enforcement
+   - TypeScript type checking
+   - Trunk-based development
+
+3. **Security Measures**
+   - Environment file protection
+   - Credentials safeguarding
+   - Regular security audits
+
+4. **Rollback Procedures**
+   - Documented safe points
+   - Clear rollback commands
+   - Version history maintenance
+
+### Development Workflow
+1. Feature branches from main
+2. Local development and testing
+3. Storybook component development
+4. Chromatic visual reviews
+5. Pull request and code review
+6. Merge to main branch
+
+## Getting Started
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Start development server: `npm run dev`
+4. Launch Storybook: `npm run storybook`
+
+## Documentation
+- [Project Documentation](./docs/README.md)
+- [Component Guidelines](./docs/components.md)
+- [Visual Testing](./docs/visual-testing.md)
+
 # Guacamole Next: Advanced Remote Access Platform
 
 ![Project Status](https://img.shields.io/badge/status-in%20development-blue)
