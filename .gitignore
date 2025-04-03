@@ -1,198 +1,32 @@
-# Dependencies
-/node_modules
-/.pnp
-.pnp.js
-.yarn/install-state.gz
-
-# Next.js build outputs
-/.next/
-/out/
-/.swc/
-next-env.d.ts
-.next-types/
-
-# Production build
-/build
-/dist
-
-# Environment files
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-.env*.local
-
-# IDE specific files
-.idea/
-.vscode/*
-!.vscode/extensions.json
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-.history
-
-# Trunk.io specific
-.trunk/out
-.trunk/logs
-.trunk/plugins
-.trunk/*storybook*
-.trunk/notifications
-.trunk/trunk-cache
-
-# Testing artifacts
-/coverage
-/cypress/videos/
-/cypress/screenshots/
-.nyc_output
-junit.xml
-playwright-report/
-test-results/
-
-# Debug logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-debug.log*
-logs
-*.log
-
-# Misc
-*.pem
-.vercel
-.turbo
-.cache
-tsconfig.tsbuildinfo
-storybook-static/
-public/sitemap*.xml
-public/robots.txt
-public/workbox-*.js
-public/sw.js
-
-# Next.js specific files
+# NextJS and Node generated files
 .next/
-out/
-build/
-dist/
-.swc/
-.turbo/
-
-# Dependencies
 node_modules/
-/.pnp
-.pnp.js
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.yarn/cache
-.yarn/unplugged
-.yarn/build-state.yml
-.yarn/install-state.gz
+dist/
+build/
 
 # Environment files
 .env
-.env.*
-!.env.example
 .env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env.*.local
 
 # Debug logs
-logs
-*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+
+# System Files
+.DS_Store
+*.pem
+
+# Testing
+coverage/
 
 # IDE specific files
 .idea/
-.vscode/*
-!.vscode/extensions.json
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-*.code-workspace
-*.sublime-*
-.DS_Store
-.history/
-.eslintcache
-.stylelintcache
-
-# OS specific files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-desktop.ini
-
-# Build outputs
-*.tsbuildinfo
-storybook-static
-next-env.d.ts
-.vercel
-.netlify
-
-# Temporary files
+.vscode/
 *.swp
 *.swo
-*~
-*.bak
-*.tmp
-*.temp
 
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Storybook
+storybook-static/
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
-
-# testing
-/coverage
-
-# next.js
-/.next/
-/out/
-
-# production
-/build
-
-# misc
-.DS_Store
-*.pem
-
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
-
-# env files (can opt-in for committing if needed)
-.env*
-
-# vercel
-.vercel
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
-*.deb
-
-*storybook.log
