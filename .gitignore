@@ -1,3 +1,80 @@
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# Next.js build outputs
+/.next/
+/out/
+/.swc/
+next-env.d.ts
+.next-types/
+
+# Production build
+/build
+/dist
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*.local
+
+# IDE specific files
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.history
+
+# Trunk.io specific
+.trunk/out
+.trunk/logs
+.trunk/plugins
+.trunk/*storybook*
+.trunk/notifications
+.trunk/trunk-cache
+
+# Testing artifacts
+/coverage
+/cypress/videos/
+/cypress/screenshots/
+.nyc_output
+junit.xml
+playwright-report/
+test-results/
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+debug.log*
+logs
+*.log
+
+# Misc
+*.pem
+.vercel
+.turbo
+.cache
+tsconfig.tsbuildinfo
+storybook-static/
+public/sitemap*.xml
+public/robots.txt
+public/workbox-*.js
+public/sw.js
+
 # Next.js specific files
 .next/
 out/
