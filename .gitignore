@@ -29,12 +29,13 @@ coverage/
 
 # Storybook
 storybook-static/
+# Storybook
+storybook-static/
 
 # Trunk
 .trunk/logs/
 .trunk/notifications/
 .trunk/out/
-.trunk/plugins/
 
 # TypeScript
 next-env.d.ts
