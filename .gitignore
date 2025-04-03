@@ -30,3 +30,18 @@ coverage/
 # Storybook
 storybook-static/
 
+# Trunk
+.trunk/logs/
+.trunk/notifications/
+.trunk/out/
+.trunk/plugins/
+
+# TypeScript
+next-env.d.ts
+
+# Logs
+build-storybook.log
+
+# Config files that should be versioned
+!chromatic.config.json
+!.trunk/trunk.yaml
