@@ -1,0 +1,5 @@
+/* Placeholder for card frame SVG */
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 600'>
+  <- Include directory structure and technology Cyberpunk card frame template -->
+  <rect x='10' y='10' width='380' height='580' fill='var(--dark-base)' stroke='var(--neon-cyan)' stroke-width='4'/>
+</svg>
