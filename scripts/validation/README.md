@@ -1,0 +1,1 @@
+# Quality Assurance Pipeline\n\n## Automated Checks\n1. Color contrast validation ()\n2. Animation FPS monitoring ()\n3. Mobile layout testing ()\n\n## Manual Validation\n- [ ] NFT minting dry-run\n- [ ] Card rendering QA\n- [ ] Wallet connection flow

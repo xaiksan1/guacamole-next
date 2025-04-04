@@ -1,0 +1,1 @@
+# Cyberpunk Style Guide\n\n## Color Palette\n- Base:  (Dark Void)\n- Accent:  (Neon Cyan)\n- Highlight:  (Neon Pink)\n\n## Typography\n- Primary: 'Rajdhani' (Bold for headers)\n- Secondary: 'Share Tech Mono' (Code/UI)
