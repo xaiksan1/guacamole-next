@@ -122,3 +122,4 @@ next-env.d.ts
 *.log
 .cache/
 
+**/.meson-subproject-wrap-hash.txt
