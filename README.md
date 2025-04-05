@@ -1,3 +1,134 @@
+# Guacamole-Next
+
+A modern, customized Hyprland Wayland desktop environment configuration for Debian-based systems. This repository provides automated installation scripts and configuration files for a complete, minimal, and aesthetically pleasing desktop environment.
+
+![Hyprland Desktop Environment](https://i.imgur.com/YourScreenshot.png)
+
+## 🌟 Features
+
+- **Hyprland** - A dynamic tiling Wayland compositor
+- **Waybar** - Highly customizable status bar
+- **Dunst** - Lightweight notification daemon
+- **Wofi** - Application launcher with modern UI
+- **Alacritty** - Fast, GPU-accelerated terminal emulator
+- **Grim & Slurp** - Screenshot utilities for Wayland
+- **Media Integration** - Media player controls in Waybar
+
+## 📋 System Requirements
+
+- Debian or Ubuntu-based Linux distribution
+- Wayland-compatible GPU
+- Git
+
+## 🚀 Installation
+
+### One-Command Installation
+
+For a complete setup, run:
+
+```bash
+git clone https://github.com/username/guacamole-next.git
+cd guacamole-next
+chmod +x install-hyprland-deps.sh
+./install-hyprland-deps.sh
+```
+
+### Manual Installation
+
+If you prefer to install components individually:
+
+1. Install dependencies:
+   ```bash
+   sudo apt update
+   sudo apt install -y git meson ninja-build build-essential \
+     libwayland-dev wayland-protocols libwlroots-dev libinput-dev \
+     libxkbcommon-dev libdisplay-info-dev libseat-dev \
+     xwayland scdoc dunst wl-clipboard
+   ```
+
+2. Build Hyprland and other components from source as needed.
+
+3. Copy configuration files:
+   ```bash
+   mkdir -p ~/.config/{hypr,waybar,dunst,wofi}
+   cp -r config/* ~/.config/
+   ```
+
+## ⚙️ Configuration Files
+
+- **Hyprland**: `~/.config/hypr/hyprland.conf`
+- **Waybar**: `~/.config/waybar/{config.json,style.css,mediaplayer.py}`
+- **Dunst**: `~/.config/dunst/dunstrc`
+- **Wofi**: `~/.config/wofi/style.css`
+
+## 🎮 Default Keybindings
+
+| Key Combination | Action |
+|-----------------|--------|
+| `Super + Return` | Open terminal (Alacritty) |
+| `Super + Q` | Close active window |
+| `Super + Shift + Q` | Exit Hyprland |
+| `Super + Space` | Toggle floating mode |
+| `Super + D` | Open application launcher (Wofi) |
+| `Super + 1-0` | Switch to workspace 1-10 |
+| `Super + Shift + 1-0` | Move window to workspace 1-10 |
+| `Super + Print` | Screenshot selected area |
+| `Super + Left/Right/Up/Down` | Move focus in direction |
+| `Super + P` | Toggle pseudo mode |
+| `Super + S` | Toggle split direction |
+
+## 🎨 Customization
+
+### Changing Theme Colors
+
+The default theme uses a blue accent color scheme. To modify:
+
+1. Edit Waybar's style: `~/.config/waybar/style.css`
+2. Edit Hyprland's colors: `~/.config/hypr/hyprland.conf` 
+3. Edit Wofi's style: `~/.config/wofi/style.css`
+
+### Monitor Configuration
+
+For multi-monitor setups, edit the monitor section in `~/.config/hypr/hyprland.conf`:
+
+```
+monitor=DP-1,2560x1440@144,0x0,1
+monitor=HDMI-A-1,1920x1080@60,2560x0,1
+```
+
+## 🔧 Troubleshooting
+
+### Common Issues
+
+- **Hyprland not appearing in login screen**: Ensure the `.desktop` file is properly installed in `/usr/share/wayland-sessions/`
+- **Black screen after login**: Check for GPU driver compatibility with Wayland
+- **Missing icons in Waybar**: Install a compatible icon font like `Font Awesome`
+- **Media controls not working**: Ensure `playerctl` is installed and the Python script has execution permissions
+
+### Logs
+
+Check logs for debugging:
+```bash
+cat ~/.local/share/hyprland/hyprland.log
+```
+
+## 📚 Additional Resources
+
+- [Hyprland Documentation](https://wiki.hyprland.org/)
+- [Waybar Wiki](https://github.com/Alexays/Waybar/wiki)
+- [Wofi Documentation](https://hg.sr.ht/~scoopta/wofi)
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🙏 Acknowledgements
+
+- [Hyprland](https://hyprland.org/) developers
+- [Waybar](https://github.com/Alexays/Waybar) team
+- The Wayland community
+- All other open-source projects included
+
 # Guacamole Next: Advanced Remote Access Platform
 
 ![Project Status](https://img.shields.io/badge/status-in%20development-blue)

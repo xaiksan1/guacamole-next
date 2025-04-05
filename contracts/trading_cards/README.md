@@ -1,0 +1,1 @@
+# NFT Trading Card Contracts\n\n## ERC-721 Implementation\n- Base contract: thirdweb's \n- Metadata standards:\n  -  for cyberpunk effects\n  -  for card stats\n\n## Deployment Plan\n1. Testnet: Mumbai/Polygon\n2. Mainnet: Ethereum L2
