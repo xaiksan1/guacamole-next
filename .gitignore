@@ -116,3 +116,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Hyprland components
+*/build/
+*.log
+.cache/
+

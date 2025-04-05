@@ -1,0 +1,21 @@
+[submodule "Hyprland"]
+	path = Hyprland
+	url = https://github.com/hyprwm/Hyprland.git
+[submodule "hyprlang"]
+	path = hyprlang
+	url = https://github.com/hyprwm/hyprlang.git
+[submodule "hyprcursor"]
+	path = hyprcursor
+	url = https://github.com/hyprwm/hyprcursor.git
+[submodule "hyprutils"]
+	path = hyprutils
+	url = https://github.com/hyprwm/hyprutils.git
+[submodule "wlroots"]
+	path = wlroots
+	url = https://gitlab.freedesktop.org/wlroots/wlroots.git
+[submodule "hyprgraphics"]
+	path = hyprgraphics
+	url = https://github.com/hyprwm/hyprgraphics.git
+[submodule "aquamarine"]
+	path = aquamarine
+	url = https://github.com/hyprwm/aquamarine.git
